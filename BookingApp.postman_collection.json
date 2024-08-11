@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "596ab6a8-a8f9-4b5b-970b-0ae1b5889ef9",
+		"name": "BookingApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "10015398"
+	},
+	"item": [
+		{
+			"name": "GertRestaurants",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 5,\n    \"friends\": [3],\n    \"reservationTime\": \"1723406400\",\n    \"customerNumber\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/restaurants/search"
+			},
+			"response": [
+				{
+					"name": "GertRestaurants",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 5,\n    \"friends\": [3],\n    \"reservationTime\": 1723406400,\n    \"customerNumber\": 4\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/restaurants/search"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "212"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d4-YBwuLegUvKmN+3FR7YzOmHsqb2o\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 21:12:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"restaurants\": [\n        {\n            \"id\": 1,\n            \"name\": \"Lardo\",\n            \"main_table_size\": 4\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Panadería Rosetta\",\n            \"main_table_size\": 4\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Tetetlán\",\n            \"main_table_size\": 4\n        }\n    ],\n    \"reservationTime\": 1723406400,\n    \"usersIds\": \"3,5\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Reservation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bulkIdReservationId\": \"0e7b1bc2-b31a-40d8-aaac-97df904d67ee\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/reservation/delete"
+			},
+			"response": [
+				{
+					"name": "Delete Reservation",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"bulkIdReservationId\": \"693f7cc5-adc5-4e26-815f-93b36015f379\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/reservation/delete"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-qtOfHjnXVK5REGLjzzMVukOJdE0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 20:35:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Reservation deleted successfully\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Reservation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"restaurant\": \n        {\n            \"id\": 3,\n            \"name\": \"Tetetlán\",\n            \"main_table_size\": 6\n        },\n    \"reservationTime\": 1723406400,\n    \"usersIds\": \"2,6,1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/reservation/create"
+			},
+			"response": [
+				{
+					"name": "Create Reservation",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"restaurant\": \n        {\n            \"id\": 3,\n            \"name\": \"Tetetlán\",\n            \"main_table_size\": 6\n        },\n    \"reservationTime\": 1723406400,\n    \"usersIds\": \"2,6,1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/reservation/create"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "213"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d5-Kd3TRkyeZdbI6zTvgJfMlCNMPnQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 20:36:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"usersIds\": \"2,6,1\",\n    \"reservationTime\": 1723406400,\n    \"restaurant\": {\n        \"id\": 3,\n        \"name\": \"Tetetlán\",\n        \"min_table_size\": 4\n    },\n    \"message\": \"Reservation created successfully\",\n    \"bulkIdReservation\": \"43355296-fa36-4b00-b9f0-080293b106a0\"\n}"
+				}
+			]
+		}
+	]
+}
